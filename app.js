@@ -35,3 +35,12 @@ let welcome =
     ? () => console.log("person is adult")
     : () => console.log("person is child");
 welcome();
+
+//with multiline arrow function
+let area = (r) => {
+    const Pi = 3.14;
+    return Pi * r * r;
+  };
+  console.log(area(10));
+
+  
