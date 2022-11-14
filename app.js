@@ -129,3 +129,15 @@ function calculate(a, b) {
 }
 let [sum, diff, mul] = calculate(12, 23);
 console.log(sum, diff, mul);
+
+
+//object destructuring
+const employee = {
+  id: "11223",
+  namee: "abhishek acharya",
+  email: "abhi@gmail.com"
+};
+const { id, namee, email } = employee;
+console.log(id);
+console.log(namee);
+console.log(email);
