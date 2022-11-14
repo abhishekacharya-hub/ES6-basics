@@ -70,7 +70,62 @@ for(const values of inter) {
 }
 
 //iterating ovr a map
-const iterables = new Map([['A', 10], [B, 20], [C, 30], [D, 40]])
-for(const [key,value] of iterables) {
-  console.log(key + '->' + value)
+const iterables = new Map([
+  ["A", 10],
+  ["B", 20],
+  ["C", 30],
+  ["D", 40]
+]);
+for (const [key, value] of iterables) {
+  console.log(key + "->" + value);
 }
+
+//template literal
+let str = "world"
+let msg = `hello ${str}`;
+console.log(msg);
+
+//multiline template literal
+let str1 = "multiline \n\ str"
+console.log(str1);
+
+
+//array destructure
+
+//basic variable assignment
+const key = ["one","two","three"]
+const [red,green,blue] = key;
+console.log(red);  //red
+console.log(green);  //green
+console.log(blue);  //blue
+
+//assignment separate from declaration
+const [a,v] = [12,23]
+console.log(a);
+console.log(v);
+
+//array destructure and default value
+const [t=10,y=20] = [30]
+console.log(t);
+console.log(y);
+
+//swapping variable
+let a = 10, 
+    b = 20;
+
+[a, b] = [b, a];
+
+console.log(a); // 20
+console.log(b); // 10
+
+//assigning the rest of an array to a variable
+let [a,...b] = [1,2,3]
+console.log(a);
+console.log(b);
+
+//function that return multiple values
+function calculate(a, b) {
+  return [a + b, a - b, a * b];
+}
+let [sum, diff, mul] = calculate(12, 23);
+console.log(sum, diff, mul);
