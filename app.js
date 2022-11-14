@@ -43,4 +43,34 @@ let area = (r) => {
   };
   console.log(area(10));
 
-  
+//rest parameter
+function sum(...args) {
+  return args.reduce((acc, curr) => {
+    return acc + curr;
+  });
+}
+console.log(sum(2, 23, 43, 45));
+
+//spread operator
+const odd = [1,3,5,7,9]
+const even = [2,4,6,8]
+const number = [...odd, ...even]
+console.log(number);
+
+//for of (iterating over the array)
+const interable = [1,2,3,4,5]
+for(const value of interable) {
+  console.log(value)
+}
+
+//iterating over a string
+const inter = "hello"
+for(const values of inter) {
+  console.log(values)
+}
+
+//iterating ovr a map
+const iterables = new Map([['A', 10], [B, 20], [C, 30], [D, 40]])
+for(const [key,value] of iterables) {
+  console.log(key + '->' + value)
+}
