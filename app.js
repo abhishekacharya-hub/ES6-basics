@@ -110,17 +110,17 @@ console.log(t);
 console.log(y);
 
 //swapping variable
-let a = 10, 
-    b = 20;
+let ac = 10, 
+    bc = 20;
 
-[a, b] = [b, a];
+[ac, bc] = [bc, ac];
 
-console.log(a); // 20
-console.log(b); // 10
+console.log(ac); // 20
+console.log(bc); // 10
 
 //assigning the rest of an array to a variable
-let [a,...b] = [1,2,3]
-console.log(a);
+let [at,...b] = [1,2,3]
+console.log(at);
 console.log(b);
 
 //function that return multiple values
@@ -141,3 +141,33 @@ const { id, namee, email } = employee;
 console.log(id);
 console.log(namee);
 console.log(email);
+
+
+//class
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  getName() {
+    return this.name;
+  }
+}
+let person = new Person("abhishek acharya");
+console.log(person.getName());
+
+
+//get and set
+class Person1 {
+  constructor(name) {
+    this.name = name;
+  }
+  get getName() {
+    return this.name;
+  }
+  set setName(name) {
+    this.name = name;
+  }
+}
+
+let person2 = new Person1("romalin fox");
+console.log(person2.getName);
