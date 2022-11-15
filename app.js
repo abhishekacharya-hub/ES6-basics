@@ -174,6 +174,9 @@ console.log(person2.getName);
 
 
 //Static methods
+/*Static methods are often utility functions, such as functions to create or clone objects,
+ whereas static properties are useful for caches, fixed-configuration, 
+ or any other data you don't need to be replicated across instances. */
 class Person2 {
   constructor(name) {
     this.name = name;
