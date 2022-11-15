@@ -171,3 +171,32 @@ class Person1 {
 
 let person2 = new Person1("romalin fox");
 console.log(person2.getName);
+
+
+//Static methods
+class Person2 {
+  constructor(name) {
+    this.name = name;
+  }
+  static staticMethod(gender) {
+    let name = gender === "male" ? "rizwan shah" : "ramiza shah";
+    return new Person2(name)
+  }
+}
+let annonymous = Person2.staticMethod("male");
+console.log(annonymous)
+
+
+//computed property
+let PropName = "fullName";
+class Person3 {
+  constructor(firstName,lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+  get [PropName] () {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+let person4 = new Person3("ritvik shami")
+console.log(person4.fullName)
