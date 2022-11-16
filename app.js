@@ -206,3 +206,30 @@ class Person3 {
 }
 let person4 = new Person3("ritvik shami")
 console.log(person4.fullName)
+
+//inheritance
+//parent class
+class Vehical {
+  constructor(name,type) {
+    this.name = name;
+    this.type = type;
+  }
+  getName() {
+    return this.name
+  }
+  getType() {
+    return this.type
+  }
+}
+//child class
+class Car extends Vehical{
+  constructor(name) {
+    super(name, "car")
+  }
+  getName() {
+    return "this car is :" + super.getName()
+  }
+}
+let car = new Car("tesla");
+console.log(car.getName());
+console.log(car.getType());
