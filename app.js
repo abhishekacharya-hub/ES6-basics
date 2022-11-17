@@ -270,28 +270,46 @@ let prom = new Promise((resolve, reject) => {
   });
 
 //promise all
-const p1 = new Promise((resolve,reject) => {
+const p1 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log("the first promise has solved")
-    resolve(10)
-  }, 1000)
-})
-const p2 =  new Promise((resolve,reject) => {
+    console.log("the first promise has solved");
+    resolve(10);
+  }, 1000);
+});
+const p2 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log("the second promise has solved")
-    resolve(20)
-  }, 1000)
-})
-const p3 = new Promise((resolve,reject) => {
+    console.log("the second promise has solved");
+    resolve(20);
+  }, 1000);
+});
+const p3 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log("the third promise has solved")
-    resolve(30)
-  }, 1000)
-})
+    console.log("the third promise has solved");
+    resolve(30);
+  }, 1000);
+});
 
-Promise.all([p1, p2, p3]) .then((results) => {
-  const total = results.reduce((p ,c) => p + c)
+Promise.all([p1, p2, p3]).then((results) => {
+  const total = results.reduce((p, c) => p + c);
 
-  console.log(`result :  ${result}`);
+  console.log(`results : ${results}`);
   console.log(`total : ${total}`);
-})
+});
+
+//promise.race
+const prom1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("the first promise has resolved");
+    resolve(10);
+  }, 1000);
+});
+const prom2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("the second promise has resolved");
+    resolve(20);
+  }, 1000);
+});
+
+Promise.race([prom1, prom2])
+  .then((result) => console.log(`resolved : ${result}`))
+  .catch((reason) => console.log(`rejected : ${reason}`));
