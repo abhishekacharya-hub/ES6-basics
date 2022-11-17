@@ -233,3 +233,21 @@ class Car extends Vehical{
 let car = new Car("tesla");
 console.log(car.getName());
 console.log(car.getType());
+
+//promise() 
+
+let promise = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    console.log("promise started resolve...")
+    resolve("promise resloved")
+  },2000)
+})
+.then((value) => {
+  console.log("ok:" + value)
+})
+.catch((value) => {
+  console.log("error:" + value)
+})
+.finally(() => {
+  console.log("final blockc")
+})
