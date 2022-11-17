@@ -236,18 +236,35 @@ console.log(car.getType());
 
 //promise() 
 
-let promise = new Promise((resolve,reject) => {
+let promise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log("promise started resolve...")
-    resolve("promise resloved")
-  },2000)
+    console.log("Promise started...");
+    resolve("Promise resolved");
+  }, 300);
 })
-.then((value) => {
-  console.log("ok:" + value)
+  .then((value) => {
+    console.log("OK: " + value);
+  })
+  .catch((value) => {
+    console.log("ERROR: " + value);
+  })
+  .finally(() => {
+    console.log("Final Block");
+  });
+
+//promise chaining
+let prom = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("1"));
 })
-.catch((value) => {
-  console.log("error:" + value)
-})
-.finally(() => {
-  console.log("final blockc")
-})
+  .then((result) => {
+    alert(result);
+    return result * 2;
+  })
+  .then((result) => {
+    alert(result);
+    return result * 2;
+  })
+  .then((result) => {
+    alert(result);
+    return result * 2;
+  });
