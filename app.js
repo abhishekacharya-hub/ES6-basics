@@ -268,3 +268,30 @@ let prom = new Promise((resolve, reject) => {
     alert(result);
     return result * 2;
   });
+
+//promise all
+const p1 = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    console.log("the first promise has solved")
+    resolve(10)
+  }, 1000)
+})
+const p2 =  new Promise((resolve,reject) => {
+  setTimeout(() => {
+    console.log("the second promise has solved")
+    resolve(20)
+  }, 1000)
+})
+const p3 = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    console.log("the third promise has solved")
+    resolve(30)
+  }, 1000)
+})
+
+Promise.all([p1, p2, p3]) .then((results) => {
+  const total = results.reduce((p ,c) => p + c)
+
+  console.log(`result :  ${result}`);
+  console.log(`total : ${total}`);
+})
