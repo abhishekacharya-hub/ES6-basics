@@ -330,3 +330,8 @@ function addOne() {
 }
 console.log(addOne(10, 20, 30));
 
+//Array.findIndex
+let rank = [1, 23, 5, 2, 4, 9];
+let index = rank.findIndex((rank) => rank === 5);
+console.log(index);
+
