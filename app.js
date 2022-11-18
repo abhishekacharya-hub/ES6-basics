@@ -313,3 +313,20 @@ const prom2 = new Promise((resolve, reject) => {
 Promise.race([prom1, prom2])
   .then((result) => console.log(`resolved : ${result}`))
   .catch((reason) => console.log(`rejected : ${reason}`));
+
+
+//Array methods
+
+//array.find()
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+function firstOdd(i) {
+  return i % 2 !== 0;
+}
+console.log(arr.find(firstOdd));
+
+//Array.from()
+function addOne() {
+  return Array.from(arguments, (x) => x + x);
+}
+console.log(addOne(10, 20, 30));
+
