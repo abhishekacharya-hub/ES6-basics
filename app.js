@@ -335,3 +335,36 @@ let rank = [1, 23, 5, 2, 4, 9];
 let index = rank.findIndex((rank) => rank === 5);
 console.log(index);
 
+//object.assign
+//Object.assign() to clone an object
+let widget = {
+  color: "red"
+};
+let clonedWidget = Object.assign({}, widget);
+
+console.log(clonedWidget);
+
+// Output
+//{ color: 'red' }
+
+//Object.assign() to merge objects
+let box = {
+  height: 10,
+  width: 20
+};
+
+let style = {
+  color: "Red",
+  borderStyle: "solid"
+};
+let styleBox = Object.assign({}, box, style);
+
+console.log(styleBox);
+
+/* Output
+{
+  height: 10,
+  width: 20,
+  color: "Red",
+  borderStyle: "solid"
+}*/
